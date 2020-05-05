@@ -1,0 +1,23 @@
+.tf-logo {
+  /* position: absolute; */
+  /* left: 8%; */
+  width: 100px;
+  height: 100px;
+}
+
+.tf-nav {
+  margin: 0;
+  padding: 0;
+}
+
+.tf-nav-item {
+  padding: 15px;
+  display: inline-block;
+  list-style: none;
+}
+
+.tf-search-box {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 51, 0, 0.9);
+}
