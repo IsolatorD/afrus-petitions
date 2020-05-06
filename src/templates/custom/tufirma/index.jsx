@@ -6,13 +6,15 @@ import {
   Visible,
   useScreenClass
 } from 'react-grid-system'
-import Logo from '../../../assets/logos/tufirma.svg'
+import Logo from './assets/logo.svg'
 
 import Button from '../../../components/Button'
 import Text from '../../../components/Text'
 import Card from '../../../components/Card'
 import Input from '../../../components/Input'
 import Dropdown from '../../../components/Dropdown'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CustomSelect from '../../../components/CustomSelect'
 
 import './index.css'
 
@@ -54,7 +56,7 @@ const TuFirma = () => {
     >
       <Row>
         <Col
-          debug
+          
           xs={5}
           sm={5}
           md={7}
@@ -74,7 +76,7 @@ const TuFirma = () => {
           />
         </Col>
         <Col
-          debug
+          
           xs={7}
           sm={7}
           md={5}
@@ -84,7 +86,7 @@ const TuFirma = () => {
           <Row>
             <Visible md lg xl>
               <Col
-                debug      
+                      
                 xs={12}
                 sm={12}
                 md={6}
@@ -123,7 +125,7 @@ const TuFirma = () => {
               </Col>
             </Visible>
             <Col
-              debug
+              
               xs={12}
               sm={12}
               md={6}
@@ -174,7 +176,7 @@ const TuFirma = () => {
       </Row>
       <Row>
         <Col
-          debug
+          
           xs={12}
           sm={12}
           md={7}
@@ -186,7 +188,7 @@ const TuFirma = () => {
         >
           <Row>
             <Col
-              debug   
+                 
               xs={12}
               sm={12}
               md={12}
@@ -208,7 +210,7 @@ const TuFirma = () => {
               </Text>
             </Col>
             <Col
-              debug
+              
               xs={12}
               sm={12}
               md={11}
@@ -235,7 +237,7 @@ const TuFirma = () => {
           </Row>
         </Col>
         <Col
-          debug
+          
           xs={12}
           sm={12}
           md={5}
@@ -269,13 +271,14 @@ const TuFirma = () => {
             </Text>
             <Input
               placeholder="Buscar peticiones y proyectos"
+              width={['xs', 'sm'].includes(screenClass) ? `${100}%` : `${100}%`}
               style={{
                 border: 'none',
                 borderRadius: 50,
-                width: ['xs', 'sm'].includes(screenClass) ? `${70}%` : `${60}%`,
                 height: 35,
-                paddingRight: 25,
-                paddingLeft: 25,
+                paddingRight: 35,
+                paddingLeft: 35,
+                width: ['xs', 'sm'].includes(screenClass) ? `${70}%` : `${60}%`
               }}
             />
             <Text
@@ -296,7 +299,7 @@ const TuFirma = () => {
       </Row>
       <Row>
         <Col
-          debug
+          
           xs={12}
           sm={12}
           md={12}
@@ -311,7 +314,7 @@ const TuFirma = () => {
       </Row>
       <Row>
         <Col
-          debug
+          
           xs={12}
           sm={12}
           md={12}
@@ -349,7 +352,7 @@ const TuFirma = () => {
           </Text>     
         </Col>
         <Col
-          debug
+          
           xs={12}
           sm={12}
           md={12}
@@ -360,7 +363,14 @@ const TuFirma = () => {
             xs
             sm
           >
-            Moviles
+            <CustomSelect
+              optionsList={categories}
+              defaultSelect={{
+                name: categories[0].name,
+                value: categories[0].id,
+                icon: categories[0].icon
+              }}
+            />
           </Visible>
           <Visible
             md
@@ -379,12 +389,12 @@ const TuFirma = () => {
                 categories.map((ct, i) => (
                   <Col
                     key={i}
-                    debug
+                    
                     md={1.3}
                     lg={1.3}
                     xl={1.3}
                     style={{
-                      padding: 7
+                      padding: 4
                     }}
                   >
                     <Card
@@ -412,7 +422,7 @@ const TuFirma = () => {
                         style={{
                           textTransform: 'uppercase',
                           paddingTop: 10,
-                          fontSize: ['xs', 'sm'].includes(screenClass) ? `${12}px` : `${12}px`,
+                          fontSize: ['xs', 'sm'].includes(screenClass) ? `${12}px` : ['md'].includes(screenClass) ?`${.45}rem` : `${.6}rem`,
                           fontWeight: 'bolder',
                           color: category === ct.id ? '#fff' : '#494C54',
                           paddingRight: ['xs', 'sm'].includes(screenClass) ? 0 : 60,
@@ -432,7 +442,7 @@ const TuFirma = () => {
       </Row>
       <Row justify={'center'} >
         <Col
-          debug
+          
           xs={12}
           sm={12}
           md={12}
@@ -457,7 +467,7 @@ const TuFirma = () => {
           </Text>
         </Col>
         <Col
-          debug
+          
           xs={12}
           sm={12}
           md={11.6}
@@ -481,7 +491,7 @@ const TuFirma = () => {
                     xl={true}
                   >
                     <Col
-                      debug
+                      
                       key={i}
                       xs={12}
                       sm={12}
@@ -514,7 +524,7 @@ const TuFirma = () => {
                     xl={true}
                   >
                     <Col
-                      debug
+                      
                       key={i}
                       xs={12}
                       sm={12}
@@ -575,14 +585,14 @@ const TuFirma = () => {
       </Row>
       <Row>
         <Col
-          debug
+          
           xs={12}
           sm={12}
           md={12}
           lg={12}
           xl={12}
           style={{
-            backgroundImage: `url(${require('./assets/fondo_pasos.svg')})`,
+            backgroundImage: `url(${require('./assets/fondo_pasos.png')})`,
             backgroundSize: 'cover',
             width: `${100}%`,
             height: ['xs', 'sm'].includes(screenClass) ? `${40}rem` : `${25}rem`,
@@ -593,7 +603,7 @@ const TuFirma = () => {
         >
           <Row>
             <Col
-              debug
+              
               xs={12}
               sm={12}
               md={4.7}
@@ -602,13 +612,14 @@ const TuFirma = () => {
               style={{
                 display: 'flex',
                 paddingBottom: 30,
-                textAlign: ['xs', 'sm'].includes(screenClass) ? 'center' : ''
+                textAlign: ['xs', 'sm'].includes(screenClass) ? 'center' : '',
+                paddingLeft: ['md'].includes(screenClass) ? `${3}rem` : `${0}rem`
               }}
             >
               <Text
                 className="default-title"
                 style={{
-                  fontSize: ['xs', 'sm'].includes(screenClass) ? `${1.7}rem` : `${1.9}rem`,
+                  fontSize: ['xs', 'sm'].includes(screenClass) ? `${1.5}rem` : `${1.9}rem`,
                   fontWeight: 'bolder',
                   color: '#fff'
                 }}
@@ -617,7 +628,7 @@ const TuFirma = () => {
               </Text>
             </Col>
             <Col
-              debug
+              
               xs={12}
               sm={12}
               md={2.3}
@@ -633,7 +644,7 @@ const TuFirma = () => {
                 src={require('./assets/paso1.svg')}
                 alt="paso1"
                 style={{
-                  width: `${7.5}rem`,
+                  width: ['md'].includes(screenClass) ? `${6.5}rem` : `${7.5}rem`,
                   height: `${10}rem`
                 }}
               />
@@ -644,7 +655,7 @@ const TuFirma = () => {
               md={2.3}
               lg={2.3}
               xl={2.3}
-              debug
+              
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -656,7 +667,7 @@ const TuFirma = () => {
                 src={require('./assets/paso2.svg')}
                 alt="paso2"
                 style={{
-                  width: `${10}rem`,
+                  width: ['md'].includes(screenClass) ? `${8.5}rem` :  `${10}rem`,
                   height: `${10}rem`
                 }}
               />
@@ -667,7 +678,7 @@ const TuFirma = () => {
               md={2.3}
               lg={2.3}
               xl={2.3}
-              debug
+              
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -675,11 +686,12 @@ const TuFirma = () => {
                 paddingLeft: ['xs', 'sm'].includes(screenClass) ? `${5}rem` : `${15}px`
               }}
             >
+              {console.log(screenClass)}
               <img
                 src={require('./assets/paso3.svg')}
                 alt="paso3"
                 style={{
-                  width: `${12}rem`,
+                  width: ['md'].includes(screenClass) ? `${10.5}rem` : `${12}rem`,
                   height: `${10}rem`
                 }}
               />
@@ -698,7 +710,7 @@ const TuFirma = () => {
             style={{
               padding: 0
             }}
-            debug
+            
           >
             <Card
               className="tf-search-box"
@@ -710,7 +722,7 @@ const TuFirma = () => {
                 <Col
                   xs={3}
                   sm={3}
-                  debug
+                  
                 >
                   <img
                     src={require('./assets/pen.svg')}
@@ -723,7 +735,7 @@ const TuFirma = () => {
                 <Col
                   xs={8}
                   sm={8}
-                  debug
+                  
                 >
                   <Text
                     className="default-title"
@@ -750,14 +762,14 @@ const TuFirma = () => {
             md={2.6}
             lg={2.6}
             xl={2.6}
-            debug
+            
             style={{
               position: 'absolute',
               display: 'flex',
               justifyContent: 'center',
               zIndex: 6,
               left: ['lg', 'xl'].includes(screenClass) ? `${10}rem` : `${7}rem`,
-              bottom: `${15}rem`
+              bottom: `${38}rem`
             }}
           >
             <Card
@@ -772,7 +784,7 @@ const TuFirma = () => {
                   md={12}
                   lg={12}
                   xl={12}
-                  debug
+                  
                   style={{
                     display: 'flex',
                     justifyContent: 'center'
@@ -790,7 +802,7 @@ const TuFirma = () => {
                   md={12}
                   lg={12}
                   xl={12}
-                  debug
+                  
                   style={{
                     marginTop: `${1}rem`,
                     textAlign: 'center'
@@ -819,7 +831,7 @@ const TuFirma = () => {
           md={12}
           lg={12}
           xl={12}
-          debug
+          
           style={{
             backgroundImage: `url(${require('./assets/fondo_amarillo.svg')})`,
             backgroundSize: 'cover',
@@ -854,7 +866,7 @@ const TuFirma = () => {
                   lg: 5,
                   xl: 5
                 }}
-                debug
+                
                 style={{
                   display: 'flex'
                 }}
@@ -872,7 +884,7 @@ const TuFirma = () => {
                   <Text
                     className="default-title"
                     style={{
-                      fontSize: ['xs', 'sm'].includes(screenClass) ? `${1.5}rem` : `${1.3}rem`,
+                      fontSize: ['xs', 'sm'].includes(screenClass) ? `${1.5}rem` : `${1}rem`,
                       fontWeight: 'bolder',
                       padding: 0,
                       paddingTop: 5,
@@ -890,7 +902,7 @@ const TuFirma = () => {
                 md={3}
                 lg={3}
                 xl={3}
-                debug
+                
                 style={{
                   display: 'flex',
                   marginTop: ['xs', 'sm'].includes(screenClass) ? `${1}rem` : 0
@@ -909,7 +921,7 @@ const TuFirma = () => {
                   <Text
                     className="default-title"
                     style={{
-                      fontSize: ['xs', 'sm'].includes(screenClass) ? `${1.5}rem` : `${1.3}rem`,
+                      fontSize: ['xs', 'sm'].includes(screenClass) ? `${1.5}rem` : `${1}rem`,
                       fontWeight: 'bolder',
                       padding: 0,
                       paddingTop: 5,
@@ -932,10 +944,11 @@ const TuFirma = () => {
           md={12}
           lg={12}
           xl={12}
-          debug
+          
           style={{
             backgroundColor: '#A4DED2',
-            height: ['xs', 'sm'].includes(screenClass) ? `${15}rem` : `${10}rem`
+            height: ['xs', 'sm'].includes(screenClass) ? `${24}rem` : `${10}rem`,
+            paddingTop: `${2}rem`
           }}
         >
           <Row>
@@ -945,7 +958,7 @@ const TuFirma = () => {
               md={4}
               lg={4}
               xl={4}
-              debug
+              
               style={{
                 display: 'flex',
                 textAlign: 'center',
@@ -963,8 +976,22 @@ const TuFirma = () => {
                   color: '#043B5E'
                 }}
               >
-                ¿Necesitas una guía?
+                ¿Necesitas <br/>una guía?
               </Text>
+              <Visible
+                md
+                lg
+                xl
+              >
+                <img
+                  src={require('./assets/arrow.svg')}
+                  alt="arrow"
+                  style={{
+                    width: `${1.5}rem`,
+                    marginLeft: `${1}rem`
+                  }}
+                />
+              </Visible>
             </Col>
             <Col
               xs={12}
@@ -972,7 +999,7 @@ const TuFirma = () => {
               md={4}
               lg={4}
               xl={4}
-              debug
+              
               style={{
                 display: 'flex',
                 textAlign: ['xs', 'sm'].includes(screenClass) ? 'center' : '',
@@ -985,7 +1012,7 @@ const TuFirma = () => {
               <Text
                 className="default-title"
                 style={{
-                  fontSize: ['xs', 'sm'].includes(screenClass) ? `${1}rem` : `${1}rem`,
+                  fontSize: ['xs', 'sm'].includes(screenClass) ? `${1}rem` : `${.8}rem`,
                   fontWeight: 'bolder',
                   color: '#043B5E'
                 }}
@@ -999,11 +1026,593 @@ const TuFirma = () => {
               md={4}
               lg={4}
               xl={4}
-              debug
+              
               style={{
-                display: 'flex'
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
               }}
             >
+              <Input
+                placeholder="Ingresar Email"
+                width={['xs', 'sm'].includes(screenClass) ? `${80}%` : `${90}%`}
+                style={{
+                  border: 'none',
+                  borderRadius: 5,
+                  width: ['xs', 'sm'].includes(screenClass) ? `${80}%` : `${80}%`,
+                  height: 35,
+                  paddingRight: ['xs', 'sm'].includes(screenClass) ? 35 : `${8}rem`,
+                  paddingLeft: 20,
+                }}
+              />
+              <Visible
+                md
+                lg
+                xl
+              >
+                <Button
+                  style={{
+                    right: `${2.4}rem`,
+                    position: 'absolute',
+                    width: `${7}rem`
+                  }}
+                >
+                  ENVIAR AHORA
+                </Button>
+              </Visible>
+            </Col>
+            <Visible
+              xs
+              sm
+            >
+              <Col
+                xs={12}
+                sm={12}
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  marginTop: `${1}rem`
+                }}
+              >
+                <Button
+                  style={{
+                    width: `${19}rem`,
+                    height: `${2}rem`
+                  }}
+                >
+                  ENVIAR AHORA
+                </Button>
+              </Col>
+            </Visible>
+          </Row>
+        </Col>
+      </Row>
+      <Row>
+        <Col
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          lx={12}
+          
+          style={{
+            height: ['xs', 'sm'].includes(screenClass) ? `${53}rem` : `${20}rem`,
+            paddingTop: ['xs', 'sm'].includes(screenClass) ? `${1}rem` : `${2.5}rem`,
+            paddingLeft: ['xs', 'sm'].includes(screenClass) ? `${15}px` : `${7}rem`
+          }}
+        >
+          <Row>
+            <Col
+              
+              xs={12}
+              sm={12}
+              md={5}
+              lg={5}
+              xl={5}
+            >
+              <Row>
+                <Col
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  lg={12}
+                  xl={12}
+                  
+                  style={{
+                    textAlign: ['xs', 'sm'].includes(screenClass) ? 'center' : ''
+                  }}
+                >
+                  <img
+                    src={require('./assets/logo2.svg')}
+                    alt="logo2"
+                    style={{
+                      width: ['xs', 'sm'].includes(screenClass) ? `${15}rem` : `${13}rem`
+                    }}
+                  />
+                </Col>
+                <Col
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  lg={12}
+                  xl={12}
+                  
+                  style={{
+                    paddingTop: `${.5}rem`,
+                    paddingBottom: `${1}rem`
+                  }}
+                >
+                  <Text
+                    className="default-text"
+                    style={{
+                      fontSize: ['xs', 'sm'].includes(screenClass) ? `${.7}rem` : `${.7}rem`,
+                      fontWeight: 'bolder',
+                      color: 'black'
+                    }}
+                  >
+                    Religión en Libertad es propiedad de la Fundación Nueva Evangelización para el siglo XXI, una fundación formada exclusivamente por seglares católicos, que son padres de familia y tienen distintas sensibilidades espirituales.
+                  </Text>
+                </Col>
+                <Col
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  lg={12}
+                  xl={12}
+                  
+                >
+                  <Button
+                    style={{
+                      marginBottom: `${1}rem`
+                    }}
+                  >
+                    FIRMAR AHORA
+                  </Button>
+                </Col>
+              </Row>
+            </Col>
+            <Col
+              
+              xs={12}
+              sm={12}
+              md={1.5}
+              lg={1.5}
+              xl={1.5}
+            >
+              <Text
+                className="default-text"
+                style={{
+                  fontSize: ['xs', 'sm'].includes(screenClass) ? `${.7}rem` : `${.8}rem`,
+                  fontWeight: 'bolder',
+                  color: 'black',
+                  textDecoration: 'underline'
+                }}
+              >
+                Recursos
+              </Text>
+              <div>
+                <ul
+                  style={{
+                    listStyle: 'none',
+                    padding: 0
+                  }}
+                >
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.7}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Blog
+                    </Text>
+                  </li>
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.7}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Ayuda y Soporte
+                    </Text>
+                  </li>
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.7}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Prensa
+                    </Text>
+                  </li>
+                </ul>
+              </div>
+            </Col>
+            <Col
+              
+              xs={12}
+              sm={12}
+              md={1.5}
+              lg={1.5}
+              xl={1.5}
+            >
+              <Text
+                className="default-text"
+                style={{
+                  fontSize: ['xs', 'sm'].includes(screenClass) ? `${.7}rem` : `${.8}rem`,
+                  fontWeight: 'bolder',
+                  color: 'black',
+                  textDecoration: 'underline'
+                }}
+              >
+                Explorar
+              </Text>
+              <div>
+                <ul
+                  style={{
+                    listStyle: 'none',
+                    padding: 0
+                  }}
+                >
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.7}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Como trabajamos
+                    </Text>
+                  </li>
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.7}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Log in
+                    </Text>
+                  </li>
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.7}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Registrate
+                    </Text>
+                  </li>
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.7}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Contáctanos
+                    </Text>
+                  </li>
+                </ul>
+              </div>
+            </Col>
+            <Col
+              
+              xs={12}
+              sm={12}
+              md={1.5}
+              lg={1.5}
+              xl={1.5}
+            >
+              <Text
+                className="default-text"
+                style={{
+                  fontSize: ['xs', 'sm'].includes(screenClass) ? `${.7}rem` : `${.8}rem`,
+                  fontWeight: 'bolder',
+                  color: 'black',
+                  textDecoration: 'underline'
+                }}
+              >
+                Categorías
+              </Text>
+              <div>
+                <ul
+                  style={{
+                    listStyle: 'none',
+                    padding: 0
+                  }}
+                >
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.6}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Construcción
+                    </Text>
+                  </li>
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.6}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Parroquia
+                    </Text>
+                  </li>
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.6}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Misiones
+                    </Text>
+                  </li>
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.6}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Evangelización
+                    </Text>
+                  </li>
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.6}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Comunidades
+                    </Text>
+                  </li>
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.6}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Medios
+                    </Text>
+                  </li>
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.6}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Educación
+                    </Text>
+                  </li>
+                  <li
+                    style={{
+                      marginBottom: `${.4}rem`
+                    }}
+                  >
+                    <Text
+                      className="default-text"
+                      style={{
+                        fontSize: ['xs', 'sm'].includes(screenClass) ? `${.5}rem` : `${.6}rem`,
+                        fontWeight: 'bolder',
+                        color: 'black'
+                      }}
+                    >
+                      Formación
+                    </Text>
+                  </li>
+                </ul>
+              </div>
+            </Col>
+            <Col
+              
+              xs={12}
+              sm={12}
+              md={2.5}
+              lg={2.5}
+              xl={2.5}
+            >
+              <Text
+                className="default-text"
+                style={{
+                  fontSize: ['xs', 'sm'].includes(screenClass) ? `${.7}rem` : `${.8}rem`,
+                  fontWeight: 'bolder',
+                  color: 'black',
+                  textDecoration: 'underline'
+                }}
+              >
+                Redes sociales
+              </Text>
+              <div
+                style={{
+                  marginTop: `${.5}rem`,
+                  marginBottom: ['xs', 'sm'].includes(screenClass) ? `${1}rem` : `${8}rem`
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={['fab', 'twitter']}
+                  color={'#FF3300'}
+                />
+                <FontAwesomeIcon
+                  icon={['fab', 'instagram']}
+                  color={'#FF3300'}
+                  style={{
+                    paddingLeft: `${1.4}rem`
+                  }}
+                />
+                <FontAwesomeIcon
+                  icon={['fab', 'facebook-square']}
+                  color={'#FF3300'}
+                  style={{
+                    paddingLeft: `${1.4}rem`
+                  }}
+                />
+              </div>
+              <div>
+                <img
+                  src={require('./assets/logo.svg')}
+                  alt="logo"
+                  style={{
+                    width: `${6}rem`
+                  }}
+                />
+              </div>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+      <Row>
+        <Col
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          
+          style={{
+            backgroundColor: '#1CB19E',
+            height: ['xs', 'sm'].includes(screenClass) ? `${8}rem` : `${3}rem`,
+            paddingTop: `${1}rem`
+          }}
+        >
+          <Row>
+            <Col
+              xs={12}
+              sm={12}
+              md={9}
+              lg={9}
+              xl={9}
+              
+              style={{
+                paddingLeft: ['xs', 'sm'].includes(screenClass) ? `${15}px`: `${6}rem`
+              }}
+            >
+              <Text
+                className="default-text"
+                style={{
+                  fontSize: ['xs', 'sm'].includes(screenClass) ? `${1.1}rem` : `${.8}rem`,
+                  fontWeight: 'bolder',
+                  color: '#fff'
+                }}
+              >
+                © Religión en Libertad 2020 Todos los derechos reservados
+              </Text>
+            </Col>
+            <Col
+              xs={12}
+              sm={12}
+              md={3}
+              lg={3}
+              xl={3}
+              
+              style={{
+                paddingTop: ['xs', 'sm'].includes(screenClass) ? `${1.5}rem`: 0
+              }}
+            >
+              <Text
+                className="default-text"
+                style={{
+                  fontSize: ['xs', 'sm'].includes(screenClass) ? `${1}rem` : `${.8}rem`,
+                  fontWeight: 'bolder',
+                  color: '#fff'
+                }}
+              >
+                Términos y condiciones
+              </Text>
             </Col>
           </Row>
         </Col>
